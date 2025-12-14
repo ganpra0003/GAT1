@@ -1,4 +1,4 @@
-/* GAT Website - Sansuikaku Inspired Design */
+
 
 :root {
     --bg-color: #050505;
@@ -35,10 +35,10 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     cursor: default;
-    /* Optional: custom cursor could be added here */
+ 
 }
 
-/* Spotlight Effect Layer */
+
 .spotlight-overlay {
     position: fixed;
     top: 0;
@@ -49,17 +49,17 @@ body {
     z-index: 1;
     background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%),
             rgba(255, 255, 255, 0.08),
-            /* Increased brightness slightly */
+       
             transparent 40%);
     will-change: background;
 }
 
-/* Scramble Text Effect Class */
+
 .scramble-text {
     display: inline-block;
     position: relative;
     opacity: 0;
-    /* Hidden initially, revealed by JS */
+ 
 }
 
 .scramble-text.visible {
@@ -71,7 +71,7 @@ body {
     opacity: 0.7;
 }
 
-/* Typography */
+
 h1,
 h2,
 h3 {
@@ -97,7 +97,7 @@ p {
     margin-bottom: 1.5rem;
 }
 
-/* Container */
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -110,7 +110,7 @@ p {
     padding: 0 2rem;
 }
 
-/* Section Label */
+
 .section-label {
     display: block;
     font-size: 0.75rem;
@@ -121,14 +121,14 @@ p {
     opacity: 0.9;
 }
 
-/* Header */
+
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 1rem 0;
-    /* Reduced from 1.5rem */
+
     z-index: 100;
     transition: all 0.3s;
 }
@@ -138,7 +138,7 @@ header.scrolled {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line-color);
     padding: 0.8rem 0;
-    /* Even more compact when scrolled */
+
 }
 
 nav {
@@ -191,7 +191,7 @@ nav {
     width: 100%;
 }
 
-/* Hero Full Section */
+
 .hero-full {
     height: 100vh;
     display: flex;
@@ -199,7 +199,7 @@ nav {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    /* Background moved to handled by .hero-bg */
+ 
 }
 
 .hero-bg {
@@ -212,9 +212,9 @@ nav {
     z-index: 1;
     transition: transform 0.5s ease-out;
     filter: blur(20px);
-    /* Strong blur as requested */
+
     transform: scale(1.1);
-    /* Scale up to hide blurred edges */
+
 }
 
 @font-face {
@@ -224,7 +224,7 @@ nav {
     font-display: swap;
 }
 
-/* Hero Content */
+
 .hero-content {
     position: relative;
     z-index: 3;
@@ -238,50 +238,46 @@ nav {
 
 .vertical-title {
     position: absolute;
-    /* Changed to absolute for precise placement */
+ 
     top: 18%;
-    /* Positioned at top */
+ 
     right: 12%;
-    /* Positioned at right */
+
     display: flex;
     gap: 1rem;
-    /* Adjusted gap for new line-height */
+ 
     flex-direction: row-reverse;
-    /* Keep text direction */
+
 }
 
-/* Ensure subtitle is positioned relative to the title on the right */
+
 .hero-subtitle {
     position: absolute;
     top: 65%;
-    /* Adjusted from 55% to accommodate larger title */
+
     right: 12%;
-    /* Align with title */
+  
     font-family: var(--font-body);
     font-size: 1.1rem;
-    /* letter-spacing: 0.2em; */
-    /* Reduced from 0.5em */
+ 
     opacity: 0;
     animation: fadeIn 1s ease-out 1s forwards;
     z-index: 3;
     writing-mode: horizontal-tb;
     color: var(--accent-color);
-    /* Add gold accent color */
+  
     text-align: right;
-    /* Ensure text aligns right */
+
 }
 
 .v-text {
     writing-mode: vertical-lr;
-    /* Left to right */
     font-family: 'Yeongwol', var(--font-vertical);
-    /* Apply Yeongwol font */
     font-size: 6rem;
     line-height: 1.1;
-    /* Crucial: Reduces width of vertical lines */
-    /* Increased from 4rem */
+ 
     letter-spacing: 0.1em;
-    /* Reset to positive value for better character spacing */
+
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s ease-out forwards;
@@ -289,19 +285,19 @@ nav {
 
 .v-text:nth-child(1) {
     animation-delay: 0.2s;
-    /* No margin for the first line (Rightmost) */
+ 
 }
 
 .v-text:nth-child(2) {
     animation-delay: 0.4s;
     margin-top: 1rem;
-    /* Step down effect */
+
 }
 
 .v-text:nth-child(3) {
     animation-delay: 0.6s;
     margin-top: 2rem;
-    /* Further step down */
+
 }
 
 @keyframes fadeInUp {
@@ -362,7 +358,7 @@ nav {
     }
 }
 
-/* Message Section */
+
 .message-section {
     padding: 12rem 0;
     text-align: center;
@@ -375,9 +371,9 @@ nav {
 
 .large-vertical {
     writing-mode: horizontal-tb;
-    /* Changed to horizontal */
+  
     font-family: var(--font-heading);
-    /* Use Heading font for better horizontal look */
+   
     font-size: 3.5rem;
     line-height: 1.5;
     letter-spacing: -0.02em;
@@ -399,7 +395,7 @@ nav {
 }
 
 
-/* About Section */
+
 .about-section {
     padding: 12rem 0;
 }
@@ -430,16 +426,16 @@ nav {
     border-radius: 4px;
 }
 
-/* Sticky Image Effect (PC Default) */
+
 .sticky-image-container {
     position: sticky;
     top: 100px;
-    /* Adjust based on header height */
+  
     height: fit-content;
     align-self: start;
 }
 
-/* Mobile Responsive Adjustments */
+
 @media (max-width: 768px) {
 
     .split-layout,
@@ -449,27 +445,26 @@ nav {
         gap: 3rem;
     }
 
-    /* Disable sticky and reorder on mobile */
+
     .sticky-image-container {
         position: relative;
         top: auto;
         align-self: auto;
         order: -1;
-        /* Image always first */
+
     }
 
-    /* Force Image to Top on Mobile */
+
     .split-layout .split-image,
     .split-layout.reverse .split-image {
         order: -1;
-        /* Image always first */
+
         width: 100%;
     }
 
     .split-layout .split-content,
     .split-layout.reverse .split-content {
         order: 1;
-        /* Content always second */
     }
 
     .hero-subtitle {
@@ -492,7 +487,7 @@ nav {
     line-height: 2;
 }
 
-/* Collection Section */
+
 .collection-section {
     padding: 12rem 0;
     background: rgba(255, 255, 255, 0.02);
@@ -507,9 +502,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    /* Reduced gap to fit more items comfortably */
     row-gap: 5rem;
-    /* Add specific row gap */
 }
 
 .collection-card {
@@ -563,7 +556,7 @@ nav {
     margin-bottom: 1rem;
 }
 
-/* Craft Section */
+
 .craft-section {
     padding: 12rem 0;
 }
@@ -648,7 +641,7 @@ nav {
     color: var(--accent-color);
 }
 
-/* Master Section */
+
 .master-section {
     padding: 12rem 0;
     background: rgba(255, 255, 255, 0.02);
@@ -681,7 +674,7 @@ nav {
     font-size: 0.85rem;
 }
 
-/* Section Description */
+
 .section-desc {
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -689,7 +682,7 @@ nav {
     margin: 0 auto;
 }
 
-/* History Section */
+
 .history-section {
     padding: 12rem 0;
     background: rgba(255, 255, 255, 0.02);
@@ -701,7 +694,7 @@ nav {
     position: relative;
 }
 
-/* Timeline Line Animation */
+
 .timeline::before {
     content: '';
     position: absolute;
@@ -713,13 +706,13 @@ nav {
     opacity: 0.3;
     transform-origin: top;
     transform: scaleY(0);
-    /* Start hidden */
+ 
     transition: transform 1.5s ease-out;
 }
 
 .timeline.visible::before {
     transform: scaleY(1);
-    /* Reveal on scroll */
+
 }
 
 .timeline-item {
@@ -768,7 +761,7 @@ nav {
     box-shadow: 0 0 20px var(--accent-color);
 }
 
-/* Culture Section */
+
 .culture-section {
     padding: 12rem 0;
 }
@@ -796,7 +789,7 @@ nav {
     line-height: 1.9;
 }
 
-/* Footer */
+
 footer {
     padding: 5rem 0;
     text-align: center;
@@ -808,7 +801,7 @@ footer p {
     opacity: 0.5;
 }
 
-/* Fade-in Animation */
+
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -820,7 +813,7 @@ footer p {
     transform: translateY(0);
 }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
     .container {
         padding: 0 2rem;
@@ -865,7 +858,7 @@ footer p {
     .timeline-item::before {
         left: 0;
         transform: none;
-        /* Reset transform for dots */
+      
         box-shadow: 0 0 10px var(--accent-color);
     }
 }
