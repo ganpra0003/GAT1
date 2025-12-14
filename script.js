@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    // Header Scroll Effect
     const header = document.querySelector('header');
 
     window.addEventListener('scroll', () => {
@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
- 
+
+
+    // Intersection Observer for Fade-in Animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
@@ -24,27 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-
+    // Observe all fade-in elements
     document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
     });
 
-
+    // Observe sections for animation
     document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
     });
 
-  
+    // Timeline Animation
     const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-              
+                // Animate items sequentially with delay
                 const items = entry.target.querySelectorAll('.timeline-item');
                 items.forEach((item, index) => {
                     setTimeout(() => {
                         item.classList.add('visible');
-                    }, index * 300); 
+                    }, index * 300); // 300ms staggering delay
                 });
             }
         });
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeline = document.querySelector('.timeline');
     if (timeline) timelineObserver.observe(timeline);
 
-
+    // 5. Spotlight Effect
     const spotlight = document.querySelector('.spotlight-overlay');
     if (spotlight) {
         window.addEventListener('mousemove', (e) => {
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+    // 6. Text Scramble Effect
     class TextScramble {
         constructor(el) {
             this.el = el;
@@ -120,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-   
+    // Initialize Scramble on Headings
     const scrambleElements = document.querySelectorAll('h2, h3, .large-vertical');
     const scrambledInstances = [];
 
@@ -128,12 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const fx = new TextScramble(el);
         scrambledInstances.push({ element: el, fx: fx, originalText: el.innerText });
 
-  
+        // Use Intersection Observer to trigger scramble
         const scrambleObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !el.classList.contains('scrambled')) {
                     el.classList.add('scrambled');
-                    fx.setText(el.innerText); 
+                    fx.setText(el.innerText); // Re-run set text to trigger effect
                     scrambleObserver.unobserve(el);
                 }
             });
@@ -142,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrambleObserver.observe(el);
     });
 
+    // Smooth Scroll for Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -155,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
- 
+    // Parallax Effect for Hero
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const hero = document.querySelector('.hero-full');

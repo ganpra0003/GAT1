@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAT - 조선의 품격</title>
+    <title>갓, GAT</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
 
 <body>
-
+    <!-- Spotlight Effect -->
     <div class="spotlight-overlay"></div>
 
-
+    <!-- Navigation -->
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">
+                <a href="#home" class="logo">
                     <img src="assets/logo.png" alt="GAT Logo" class="logo-img">
                 </a>
                 <div class="nav-links">
@@ -25,20 +26,24 @@
                     <a href="#craft">장인정신</a>
                     <a href="#master">명장</a>
                 </div>
+
             </nav>
         </div>
     </header>
 
-
-    <section class="hero-full">
-        <div class="hero-bg"></div> 
+    <!-- Hero Section -->
+    <section id="home" class="hero-full">
+        <div class="hero-bg"></div> <!-- Background Image Layer -->
         <div class="hero-content">
-            <h1 class="vertical-title">
-                <span class="v-text">전통의</span>
-                <span class="v-text">품격을</span>
-                <span class="v-text">잇다</span>
+            <h1 class="hero-title">
+                <span class="title-line">전통의</span>
+                <span class="title-line">품격을</span>
+                <span class="title-line decoration-row">
+                    잇다
+                    <span class="title-decoration-line"></span>
+                    <img src="assets/logo.png" alt="GAT Logo" class="title-decoration-logo">
+                </span>
             </h1>
-            <p class="hero-subtitle">GAT - 조선 선비의 혼</p>
         </div>
         <div class="scroll-indicator">
             <span>SCROLL</span>
@@ -46,7 +51,7 @@
         </div>
     </section>
 
-
+    <!-- Message Section -->
     <section class="message-section">
         <div class="container-narrow">
             <div class="vertical-message">
@@ -62,7 +67,7 @@
         </div>
     </section>
 
-
+    <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
             <div class="split-layout">
@@ -90,40 +95,67 @@
         </div>
     </section>
 
-
+    <!-- History Section -->
     <section class="history-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">HISTORY</span>
-                <h2>500년의 역사</h2>
-                <p class="section-desc">삼국시대부터 현대까지, 갓이 걸어온 긴 여정</p>
+                <!-- Timeline -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">삼국시대</div>
+                        <h3>기원</h3>
+                        <p>고구려 고분 벽화(감신총)에서 관모의 원형을 발견할 수 있습니다. 당시에는 신분과 지위를 나타내는 중요한 상징물이었습니다.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">고려시대</div>
+                        <h3>발전</h3>
+                        <p>고려를 거치며 관모 제작 기술이 발전했습니다. 귀족과 관료들이 다양한 형태의 관모를 착용하기 시작했습니다.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">조선시대</div>
+                        <h3>전성기</h3>
+                        <p>조선 중기 이후 흑립(黑笠)이 선비의 필수품으로 자리잡았습니다. 말총을 이용한 정교한 제작 기술이 완성되었으며, 갓은 조선 문화를 대표하는 상징이 되었습니다.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">현대</div>
+                        <h3>보존과 계승</h3>
+                        <p>1964년 국가무형문화재 제4호로 지정되어 전통 기술이 보존되고 있습니다. 현대에도 전통 혼례, 문화 행사 등에서 갓의 가치가 재조명되고 있습니다.</p>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">삼국시대</div>
-                    <h3>기원</h3>
-                    <p>고구려 고분 벽화(감신총)에서 관모의 원형을 발견할 수 있습니다. 당시에는 신분과 지위를 나타내는 중요한 상징물이었습니다.</p>
+        </div>
+    </section>
+
+    <!-- Narrative Feature Section (Flip Card) -->
+    <section class="narrative-section">
+        <div class="narrative-card-container fade-in">
+            <div class="narrative-card">
+                <!-- Front: Crisis -->
+                <div class="card-face card-front">
+                    <div class="content-wrapper">
+                        <span class="narrative-year">1895</span>
+                        <h3>단발령, 잊혀진 이름</h3>
+                        <p>1895년 단발령으로 갓은 '구시대의 유물'로 잊혀져 갔습니다. 500년의 역사가 끊어질 위기였습니다.</p>
+                        <div class="card-hint">
+                            <span class="hint-icon">↻</span>
+                            <span>Hover to discover</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">고려시대</div>
-                    <h3>발전</h3>
-                    <p>고려를 거치며 관모 제작 기술이 발전했습니다. 귀족과 관료들이 다양한 형태의 관모를 착용하기 시작했습니다.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">조선시대</div>
-                    <h3>전성기</h3>
-                    <p>조선 중기 이후 흑립(黑笠)이 선비의 필수품으로 자리잡았습니다. 말총을 이용한 정교한 제작 기술이 완성되었으며, 갓은 조선 문화를 대표하는 상징이 되었습니다.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">현대</div>
-                    <h3>보존과 계승</h3>
-                    <p>1964년 국가무형문화재 제4호로 지정되어 전통 기술이 보존되고 있습니다. 현대에도 전통 혼례, 문화 행사 등에서 갓의 가치가 재조명되고 있습니다.</p>
+                <!-- Back: Pulse -->
+                <div class="card-face card-back">
+                    <div class="content-wrapper">
+                        <h3>끊어지지 않은 맥(脈)</h3>
+                        <p>하지만 보이지 않는 곳에서 묵묵히 시간을 엮어온 장인들의 땀방울이 있었기에 우리 고유의 미학은 오늘날까지 이어질 수 있었습니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- Cultural Significance Section -->
     <section class="culture-section">
         <div class="container">
             <div class="split-layout reverse">
@@ -157,7 +189,7 @@
         </div>
     </section>
 
-    
+    <!-- Collection Section -->
     <section id="collection" class="collection-section">
         <div class="container">
             <div class="section-header">
@@ -229,7 +261,7 @@
         </div>
     </section>
 
-
+    <!-- Craft Section -->
     <section id="craft" class="craft-section">
         <div class="container">
             <div class="section-header">
@@ -238,55 +270,76 @@
                 <p class="section-desc">수개월에서 1년이 걸리는 정교한 제작 과정</p>
             </div>
 
-   
+            <!-- Craftsman Image -->
             <div class="craftsman-showcase">
                 <img src="assets/artisan_hands.png" alt="장인의 손길">
                 <p class="image-caption">말총 한 올 한 올을 정성스레 엮는 장인의 손</p>
             </div>
 
-            <div class="craft-grid">
-                <div class="craft-step">
-                    <div class="step-number">01</div>
-                    <h3>양태 (陽胎)</h3>
-                    <p class="craft-subtitle">갓의 기초가 되는 챙 만들기</p>
-                    <p>대나무를 머리카락보다 가늘게 쪼개어 원형의 테(骨格)를 만듭니다. 이 과정을 '세죽(細竹)'이라 하며, 장인의 숙련도가 가장 중요한 단계입니다.</p>
-                    <p>그 위에 한지를 여러 겹 정성스레 발라 강도를 높이고, 옻칠을 수차례 반복하여 광택과 방수성을 부여합니다. 양태의 균형이 갓 전체의 품격을 결정합니다.</p>
-                    <ul class="craft-details">
-                        <li>소요 시간: 약 2-3개월</li>
-                        <li>주요 재료: 대나무, 한지, 옻</li>
-                        <li>핵심 기술: 세죽, 옻칠</li>
-                    </ul>
+            <div class="craft-zigzag">
+                <!-- Step 1: Yangtae -->
+                <div class="craft-row">
+                    <div class="craft-content fade-in">
+                        <div class="step-number">01</div>
+                        <h3>양태 (陽胎)</h3>
+                        <p class="craft-subtitle">갓의 기초가 되는 챙 만들기</p>
+                        <p>대나무를 머리카락보다 가늘게 쪼개어 원형의 테(骨格)를 만듭니다. 이 과정을 '세죽(細竹)'이라 하며, 장인의 숙련도가 가장 중요한 단계입니다.</p>
+                        <p>그 위에 한지를 여러 겹 정성스레 발라 강도를 높이고, 옻칠을 수차례 반복하여 광택과 방수성을 부여합니다. 양태의 균형이 갓 전체의 품격을 결정합니다.</p>
+                        <ul class="craft-details">
+                            <li>소요 시간: 약 2-3개월</li>
+                            <li>주요 재료: 대나무, 한지, 옻</li>
+                            <li>핵심 기술: 세죽, 옻칠</li>
+                        </ul>
+                    </div>
+                    <div class="craft-image fade-in delay-200">
+                        <img src="assets/yangtae_making.png" alt="양태 제작 과정 - 대나무 엮기">
+                    </div>
                 </div>
-                <div class="craft-step">
-                    <div class="step-number">02</div>
-                    <h3>총모자 (總帽子)</h3>
-                    <p class="craft-subtitle">말총으로 엮는 갓의 몸체</p>
-                    <p>엄선된 말총을 한 올 한 올 정교하게 엮어 갓의 몸체를 완성합니다. 균일한 결과 투명한 광택을 얻기 위해 수개월에서 1년이 소요되며, 장인의 숙련된 손끝에서만 가능한 섬세한
-                        작업입니다.</p>
-                    <p>총의 밀도와 패턴이 갓의 가치를 좌우합니다. 촘촘하고 균일한 짜임은 수십 년의 경험이 만들어낸 결과물입니다.</p>
-                    <ul class="craft-details">
-                        <li>소요 시간: 약 6개월-1년</li>
-                        <li>주요 재료: 말총 (흑마 꼬리털)</li>
-                        <li>핵심 기술: 총엮기, 결 맞추기</li>
-                    </ul>
+
+                <!-- Step 2: Chongmoja -->
+                <div class="craft-row reverse">
+                    <div class="craft-content fade-in">
+                        <div class="step-number">02</div>
+                        <h3>총모자 (總帽子)</h3>
+                        <p class="craft-subtitle">말총으로 엮는 갓의 몸체</p>
+                        <p>엄선된 말총을 한 올 한 올 정교하게 엮어 갓의 몸체를 완성합니다. 균일한 결과 투명한 광택을 얻기 위해 수개월에서 1년이 소요되며, 장인의 숙련된 손끝에서만 가능한
+                            섬세한 작업입니다.</p>
+                        <p>총의 밀도와 패턴이 갓의 가치를 좌우합니다. 촘촘하고 균일한 짜임은 수십 년의 경험이 만들어낸 결과물입니다.</p>
+                        <ul class="craft-details">
+                            <li>소요 시간: 약 6개월-1년</li>
+                            <li>주요 재료: 말총 (흑마 꼬리털)</li>
+                            <li>핵심 기술: 총엮기, 결 맞추기</li>
+                        </ul>
+                    </div>
+                    <div class="craft-image fade-in delay-200">
+                        <img src="assets/chongmoja_making.png" alt="총모자 제작 과정 - 말총 엮기">
+                    </div>
                 </div>
-                <div class="craft-step">
-                    <div class="step-number">03</div>
-                    <h3>입자 (笠子)</h3>
-                    <p class="craft-subtitle">완성을 향한 마지막 손길</p>
-                    <p>양태와 총모자를 하나로 결합하고, 끈과 장식을 달아 완성합니다. 모든 부분의 균형을 맞추고 미세한 흠집까지 제거하는 최종 마무리 과정에서 갓의 완성도가 결정됩니다.</p>
-                    <p>이 단계에서 장인의 미학적 감각이 빛을 발합니다. 갓끈의 위치, 장식의 배치 하나하나가 전체 조화를 이룹니다.</p>
-                    <ul class="craft-details">
-                        <li>소요 시간: 약 1-2개월</li>
-                        <li>주요 작업: 조립, 마무리, 장식</li>
-                        <li>핵심 기술: 균형 맞추기, 세부 마감</li>
-                    </ul>
+
+                <!-- Step 3: Ipja -->
+                <div class="craft-row">
+                    <div class="craft-content fade-in">
+                        <div class="step-number">03</div>
+                        <h3>입자 (笠子)</h3>
+                        <p class="craft-subtitle">완성을 향한 마지막 손길</p>
+                        <p>양태와 총모자를 하나로 결합하고, 끈과 장식을 달아 완성합니다. 모든 부분의 균형을 맞추고 미세한 흠집까지 제거하는 최종 마무리 과정에서 갓의 완성도가 결정됩니다.
+                        </p>
+                        <p>이 단계에서 장인의 미학적 감각이 빛을 발합니다. 갓끈의 위치, 장식의 배치 하나하나가 전체 조화를 이룹니다.</p>
+                        <ul class="craft-details">
+                            <li>소요 시간: 약 1-2개월</li>
+                            <li>주요 작업: 조립, 마무리, 장식</li>
+                            <li>핵심 기술: 균형 맞추기, 세부 마감</li>
+                        </ul>
+                    </div>
+                    <div class="craft-image fade-in delay-200">
+                        <img src="assets/ipja_making.png" alt="입자 완성 과정 - 옻칠 및 조립">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- Master Section -->
     <section id="master" class="master-section">
         <div class="container">
             <div class="split-layout reverse">
@@ -312,14 +365,16 @@
         </div>
     </section>
 
-
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 GAT. All rights reserved.</p>
-            <p>전통의 품격을 현대에 전하다</p>
+            <p>한경국립대학교 디자인예술스포츠학부 시각미디어디자인 | 김도경, 정기호 | 지도교수 나상호</p>
+            <p>이 웹사이트는 디지털퍼블리싱2 수업의 일환으로 제작되었습니다. Copyright@KimDoKyeong, JeongGiHo</p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 
