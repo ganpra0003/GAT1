@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Header Scroll Effect
     const header = document.querySelector('header');
 
     window.addEventListener('scroll', () => {
@@ -11,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
-    // Intersection Observer for Fade-in Animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
@@ -26,27 +23,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Observe all fade-in elements
+
     document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
     });
 
-    // Observe sections for animation
+
     document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
     });
 
-    // Timeline Animation
     const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Animate items sequentially with delay
+
                 const items = entry.target.querySelectorAll('.timeline-item');
                 items.forEach((item, index) => {
                     setTimeout(() => {
                         item.classList.add('visible');
-                    }, index * 300); // 300ms staggering delay
+                    }, index * 300);
                 });
             }
         });
@@ -55,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeline = document.querySelector('.timeline');
     if (timeline) timelineObserver.observe(timeline);
 
-    // 5. Spotlight Effect
+
     const spotlight = document.querySelector('.spotlight-overlay');
     if (spotlight) {
         window.addEventListener('mousemove', (e) => {
@@ -64,11 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Text Scramble Effect
+
     class TextScramble {
         constructor(el) {
             this.el = el;
-            this.chars = '!<>-_\\/[]{}—=+*^?#________';
+            this.chars = '魂갓匠人業統脈傳技職誠藝美善線漆笠冠冒織結絲竹鬃針飾禮士義志氣靜修虛實固秀德鑑傳世壽';
+            this.specialChars = '!<>-_\\/[]{}—=+*^?#________';
             this.update = this.update.bind(this);
         }
 
@@ -81,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const from = oldText[i] || '';
                 const to = newText[i] || '';
                 const start = Math.floor(Math.random() * 40);
-                const end = start + Math.floor(Math.random() * 40);
+                const end = start + Math.floor(Math.random() * 40) + 200;
                 this.queue.push({ from, to, start, end });
             }
             cancelAnimationFrame(this.frameRequest);
@@ -99,16 +96,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     complete++;
                     output += to;
                 } else if (this.frame >= start) {
-                    if (!char || Math.random() < 0.28) {
-                        char = this.randomChar();
-                        this.queue[i].char = char;
+                    if (to === ' ' || to === '\n') {
+                        output += to;
+                    } else {
+                        if (!char || Math.random() < 0.015) {
+                            char = this.randomChar();
+                            this.queue[i].char = char;
+                        }
+                        output += `<span class="dud">${char}</span>`;
                     }
-                    output += `<span class="dud">${char}</span>`;
                 } else {
                     output += from;
                 }
             }
-            this.el.innerHTML = output;
+            this.el.innerHTML = output.replace(/\n/g, '<br>');
             if (complete === this.queue.length) {
                 this.resolve();
             } else {
@@ -118,11 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         randomChar() {
+            if (Math.random() < 0.3) {
+                return this.specialChars[Math.floor(Math.random() * this.specialChars.length)];
+            }
             return this.chars[Math.floor(Math.random() * this.chars.length)];
         }
     }
 
-    // Initialize Scramble on Headings
+
     const scrambleElements = document.querySelectorAll('h2, h3, .large-vertical');
     const scrambledInstances = [];
 
@@ -130,12 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const fx = new TextScramble(el);
         scrambledInstances.push({ element: el, fx: fx, originalText: el.innerText });
 
-        // Use Intersection Observer to trigger scramble
+
         const scrambleObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !el.classList.contains('scrambled')) {
                     el.classList.add('scrambled');
-                    fx.setText(el.innerText); // Re-run set text to trigger effect
+                    fx.setText(el.innerText);
                     scrambleObserver.unobserve(el);
                 }
             });
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrambleObserver.observe(el);
     });
 
-    // Smooth Scroll for Navigation
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -158,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Parallax Effect for Hero
+
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const hero = document.querySelector('.hero-full');
@@ -168,4 +172,70 @@ document.addEventListener('DOMContentLoaded', () => {
             hero.style.opacity = 1 - (scrolled / window.innerHeight);
         }
     });
+
+    const stampBtn = document.getElementById('stamp-btn');
+    const commitmentInput = document.getElementById('commitment-input');
+    const seal = document.getElementById('digital-seal');
+
+    if (stampBtn && commitmentInput && seal) {
+        stampBtn.addEventListener('click', () => {
+            if (commitmentInput.value.trim() === '') {
+                alert('응원의 한마디를 입력해주세요.');
+                return;
+            }
+
+            seal.classList.add('stamped');
+            stampBtn.textContent = '서약 완료';
+            stampBtn.style.backgroundColor = '#555';
+            stampBtn.style.cursor = 'default';
+            stampBtn.disabled = true;
+            commitmentInput.disabled = true;
+            commitmentInput.classList.add('completed');
+            commitmentInput.value = `"${commitmentInput.value}" - 서약해주셔서 감사합니다. 확인되었습니다.`;
+        });
+    }
+
+
+    const legacySection = document.querySelector('.legacy-section');
+    const legacyBg = document.querySelector('.legacy-bg-layer');
+
+    if (legacySection && legacyBg) {
+        window.addEventListener('scroll', () => {
+            const rect = legacySection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const sectionHeight = legacySection.offsetHeight;
+
+
+            if (rect.top < viewportHeight && rect.bottom > 0) {
+
+                if (rect.top <= 0) {
+
+                    const scrolledPastTop = Math.abs(rect.top);
+
+                    const fadeDistance = sectionHeight * 0.7;
+
+
+                    let newOp = 0.4 - (scrolledPastTop / fadeDistance) * 0.4;
+                    newOp = Math.max(0, newOp);
+
+                    legacyBg.style.opacity = newOp;
+                } else {
+                    legacyBg.style.opacity = 0.4;
+                }
+            }
+        });
+    }
+
+
+
+    const scrollTopBtn = document.querySelector('.scroll-top-btn');
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+    }
 });
